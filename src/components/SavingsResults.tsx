@@ -45,7 +45,7 @@ const SavingsResults = ({ futureValue, totalDeposits, totalInterest, years }: Sa
             <span>Your Deposits</span>
             <span className="font-medium">${totalDeposits.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
           </div>
-          <Progress value={depositPercentage} className="h-2 bg-muted" indicatorClassName="bg-secondary" />
+          <Progress value={depositPercentage} className="h-2 bg-muted [&>div]:bg-secondary" />
         </div>
         
         <div className="space-y-2">
@@ -53,7 +53,7 @@ const SavingsResults = ({ futureValue, totalDeposits, totalInterest, years }: Sa
             <span>Interest Earned</span>
             <span className="font-medium">${totalInterest.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
           </div>
-          <Progress value={interestPercentage} className="h-2 bg-muted" indicatorClassName="bg-finance-accent" />
+          <Progress value={interestPercentage} className="h-2 bg-muted [&>div]:bg-finance-accent" />
         </div>
       </div>
       
