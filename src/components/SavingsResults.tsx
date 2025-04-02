@@ -27,13 +27,13 @@ const SavingsResults = ({ futureValue, totalDeposits, totalInterest, years }: Sa
           title="Total Deposits" 
           value={totalDeposits}
           description="Amount you contribute" 
-          valueColor="text-secondary"
+          valueColor="text-primary"
         />
         <StatCard 
           title="Interest Earned" 
           value={totalInterest} 
           description="Money made by your money"
-          valueColor="text-finance-accent"
+          valueColor="text-primary"
         />
       </div>
       
@@ -45,7 +45,7 @@ const SavingsResults = ({ futureValue, totalDeposits, totalInterest, years }: Sa
             <span>Your Deposits</span>
             <span className="font-medium">${totalDeposits.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
           </div>
-          <Progress value={depositPercentage} className="h-2 bg-muted [&>div]:bg-secondary" />
+          <Progress value={depositPercentage} className="h-2 bg-muted [&>div]:bg-primary" />
         </div>
         
         <div className="space-y-2">
@@ -53,7 +53,7 @@ const SavingsResults = ({ futureValue, totalDeposits, totalInterest, years }: Sa
             <span>Interest Earned</span>
             <span className="font-medium">${totalInterest.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
           </div>
-          <Progress value={interestPercentage} className="h-2 bg-muted [&>div]:bg-finance-accent" />
+          <Progress value={interestPercentage} className="h-2 bg-muted [&>div]:bg-primary" />
         </div>
       </div>
       
@@ -72,7 +72,7 @@ interface StatCardProps {
 }
 
 const StatCard = ({ title, value, description, valueColor = "text-foreground" }: StatCardProps) => (
-  <Card className="p-4">
+  <Card className="p-4 border-primary/20">
     <div className="text-sm font-medium text-muted-foreground">{title}</div>
     <div className={`text-2xl font-bold mt-1 ${valueColor}`}>
       ${value.toLocaleString(undefined, { maximumFractionDigits: 0 })}
